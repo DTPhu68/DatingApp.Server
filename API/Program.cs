@@ -1,6 +1,7 @@
 using API.Extensions;
 using API.Middleware;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
@@ -33,6 +34,14 @@ app.UseCors(builder => builder.AllowAnyHeader()
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseStaticFiles();
+app.UseStaticFiles(new StaticFileOptions()
+{
+  FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Resources")),
+  RequestPath = new PathString("/Resources")
+});
+
 
 app.MapControllers();
 
