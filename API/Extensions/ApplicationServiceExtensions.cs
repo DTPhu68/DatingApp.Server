@@ -17,6 +17,7 @@ namespace API.Extensions
       });
       services.AddCors();
       services.AddScoped<ITokenService, TokenService>();
+      services.AddScoped<IPhotoService, PhotoService>();
       services.AddScoped<IUserRepository, UserRepository>();
       //services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
       services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
