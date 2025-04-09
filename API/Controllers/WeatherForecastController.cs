@@ -36,7 +36,6 @@ namespace API.Controllers
       if (!Uri.TryCreate(url, UriKind.Absolute, out uri))
         uri = new Uri(SomeBaseUri, url);
       return Path.GetFileName(uri.LocalPath);
-
     }
   }
 }

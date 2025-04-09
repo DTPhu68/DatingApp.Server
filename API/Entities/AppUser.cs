@@ -14,7 +14,7 @@ namespace API.Entities
     [Required, MaxLength(100)]
     public string PasswordSalt { get; set; } //100
     /* new Properties*/
-    public DateOnly DateOfBirth { get; set; }
+    public DateTime DateOfBirth { get; set; }
     public string KnownAs { get; set; }
     public DateTime Created { get; set; } = DateTime.UtcNow;
     public DateTime LastActive { get; set; } = DateTime.UtcNow;
